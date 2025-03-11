@@ -26,6 +26,7 @@ public class TodoController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Todo> createTodo(@RequestBody Todo newTodo) {
+
         boolean success = todoService.createNewTodo(newTodo);
         if(success){
             return new ResponseEntity<>(newTodo, HttpStatus.CREATED);

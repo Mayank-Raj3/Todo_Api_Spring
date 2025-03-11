@@ -19,7 +19,11 @@ public class TodoService {
 //    private static final String TODO_NOT_FOUND = "Todo not found";
 
     public List<Todo> getToDoLists(){
-        return (List<Todo>) todoRepository.findAll();
+        List<Todo> t =  todoRepository.findAll();
+        for(Todo it : t){
+            System.out.println(it.isCompleted());
+        }
+        return t;
     }
 
 
